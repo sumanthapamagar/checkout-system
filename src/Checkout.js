@@ -1,4 +1,4 @@
-import PricingRuleFactory from './pricingRules/PricingRuleFactory';
+import PricingRuleFactory from "./pricingRules/PricingRuleFactory.js";
 
 class Checkout {
     constructor(pricingRules = []) {

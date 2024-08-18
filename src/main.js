@@ -1,6 +1,6 @@
-import { products } from "./src/data/products.js";
-import { pricingRules } from "./src/data/activePricingRules.js";
-import Checkout from "./src/Checkout.js";
+import { products } from "./data/products.js";
+import { pricingRules } from "./data/activePricingRules.js";
+import Checkout from "./Checkout.js";
 
 const ipd = products.find((product) => product.sku === "ipd");
 const mbp = products.find((product) => product.sku === "mbp");
@@ -21,6 +21,6 @@ checkout.scan(atv);
 checkout.scan(atv);
 checkout.scan(vga);
 
-const totalAount = checkout.total();
+const totalAmount = checkout.total();
 
-console.info(totalAount);
+console.info(`The total price of the scanned items is: ${totalAmount}`);
