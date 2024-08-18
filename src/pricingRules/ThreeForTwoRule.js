@@ -16,7 +16,11 @@ class ThreeForTwoRule extends PricingRule {
         const productCount = cart.filter(
             (product) => product.sku === this.productSKU
         ).length;
+
+
         if (productCount < 3) {
+            // Discount not applicable if
+            // less than 3 eligible products in the cart
             return 0;
         }
 
@@ -24,6 +28,9 @@ class ThreeForTwoRule extends PricingRule {
             (product) => product.sku === this.productSKU
         ).price;
 
+        // Every third product is free
+        // So the discount is the price of the product
+        // multiplied by the number of free products
         const discountAmount = Math.floor(productCount / 3) * productPrice;
 
         return discountAmount;

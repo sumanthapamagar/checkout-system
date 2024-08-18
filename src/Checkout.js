@@ -1,9 +1,15 @@
 import PricingRuleFactory from "./pricingRules/PricingRuleFactory.js";
 
+/**
+ * Checkout system for a shopping cart.
+ * @class
+ */
 class Checkout {
     constructor(pricingRules = []) {
         this.cart = [];
+        
         const pricingRuleFactory = new PricingRuleFactory();
+        
         this.pricingRules = pricingRules.map(({ type, ...rule }) =>
             pricingRuleFactory.createPricingRule(type, rule)
         );

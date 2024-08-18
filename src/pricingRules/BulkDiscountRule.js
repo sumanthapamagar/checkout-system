@@ -24,7 +24,8 @@ class BulkDiscountRule extends PricingRule {
         const productCount = cart.filter(product => product.sku === this.productSKU).length;
 
         if(productCount === 0 || productCount < this.minimum){
-            // product count is less than the minimum required for discount
+            // Discount not applicable if 
+            // no eligible products in cart or product count is less than the minimum
             return  0
         }
 

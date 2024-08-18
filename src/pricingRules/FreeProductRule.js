@@ -24,8 +24,8 @@ class FreeProductRule extends PricingRule {
         ).length;
 
         if (productCount === 0 || freeProductsCountInCart === 0) {
+            // Discount not applicale if
             // No eligible products in the cart or no free products in the cart
-            // Discount not applicale
             return 0;
         }
 
@@ -33,14 +33,14 @@ class FreeProductRule extends PricingRule {
             (product) => product.sku === this.freeProductSKU
         );
 
-        if (freeProductsCountInCart >= productCount) {
+        if (freeProductsCountInCart > productCount) {
             // If there are more freeProductsCountInCart than productCount
             // then limit the discount to the product count * price of the free product
             const discountAmount = productCount * freeProduct.price;
             return discountAmount;
         }
 
-        // there are less free products than the eligible products
+        // total free products is less or same quantity as the total eligible products
         // discount the total price of the free products already in the cart
 
         const discountAmount = freeProductsCountInCart * freeProduct.price;
