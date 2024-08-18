@@ -10,11 +10,11 @@ class PricingRuleFactory {
 
     createPricingRule(ruleType, ruleParams) {
         switch (ruleType) {
-            case 'ThreeForTwoRule':
+            case "ThreeForTwoRule":
                 return new ThreeForTwoRule(ruleParams);
-            case 'BulkDiscountRule':
+            case "BulkDiscountRule":
                 return new BulkDiscountRule(ruleParams);
-            case 'FreeProductRule':
+            case "FreeProductRule":
                 return new FreeProductRule(ruleParams);
             default:
                 throw new Error(`Invalid pricing rule: ${ruleType}`);
