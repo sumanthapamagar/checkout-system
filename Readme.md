@@ -63,7 +63,7 @@ Products are stored statically in src/data/prodcuts.js. Add, edit or remove prod
 Pricing rules are stored statically in src/data/pricatingRules.js. Add, edit or remove product arry to modify the pricing rules here. 
 
 3. **Modify Sacnned Items:**
-Open index.js and modify checkout scans between line 11 and line 23
+Open the src/main.js file and modify checkout scans between line 11 and line 23
 
 4. **Run the app:**
     ```sh
